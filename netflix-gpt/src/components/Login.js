@@ -3,13 +3,12 @@ import {useState, useRef} from "react";
 import {checkValidData} from "../utils/validate";
 import {createUserWithEmailAndPassword, signInWithEmailAndPassword , updateProfile} from "firebase/auth"
 import {auth} from "../utils/firebase";
-import {useNavigate} from "react-router-dom";
 import {addUser} from "../utils/userSlice";
 import {useDispatch} from "react-redux";
+import {BG_URL, USER_AVATAR} from "../utils/constants";
 function Login() {
     const [isSignInForm, setIsSignInForm] = useState(true);
     const [errorMessage, setErrorMessage] = useState(null)
-    const navigate = useNavigate();
     const dispatch = useDispatch();
 
     const name = useRef(null);
@@ -37,13 +36,11 @@ function Login() {
                     // Signed up
                     const user = userCredential.user;
                     updateProfile(user, {
-                        displayName: name.current.value, photoURL: "https://avatars.githubusercontent.com/u/88208046?v=4"
+                        displayName: name.current.value, photoURL: USER_AVATAR
                     }).then(() => {
                         // Profile updated!
                         const {uid, email, displayName, photoURL} = auth.currentUser;
                         dispatch(addUser({uid:uid, email:email, displayName:displayName, photoURL:photoURL}));
-
-                        navigate("/browse");
                     }).catch((error) => {
                         // An error occurred
                         setErrorMessage(error.message);
@@ -66,8 +63,7 @@ function Login() {
                 .then((userCredential) => {
                     // Signed in
                     const user = userCredential.user;
-                    console.log(user);
-                    navigate("/browse");
+                    // console.log(user);
                 })
                 .catch((error) => {
                     const errorCode = error.code;
@@ -86,7 +82,7 @@ function Login() {
         <div>
             <Header/>
             <div className="absolute">
-                <img src="https://assets.nflxext.com/ffe/siteui/vlv3/9134db96-10d6-4a64-a619-a21da22f8999/a449fabb-05e4-4c8a-b062-b0bec7d03085/IN-en-20240115-trifectadaily-perspective_alpha_website_small.jpg"
+                <img src={BG_URL}
                      alt="backgroung"/>
             </div>
 
