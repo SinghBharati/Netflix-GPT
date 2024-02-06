@@ -14,6 +14,7 @@ export const API_OPTIONS  = {
         Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmNzdlZjhjZTg2OTZkOWNkZmI3NjM0MTM5YWFiNDZlNSIsInN1YiI6IjY1YmI4MmI0MmQxZTQwMDE4NDVjMWU2NCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.4LzZQ8GjbM5cgIObqBPzI-GtuzRqmckvy-Z5GHy6mDo'
     }
 };
+
 export const IMAGE_CDN_URL =
     "https://image.tmdb.org/t/p/w780"
 
@@ -22,5 +23,3 @@ export const SUPPORTED_LANGUAGES = [
     { identifier: "hindi", name: "Hindi" },
     { identifier: "spanish", name: "Spanish" },
 ];
-
-export const OPENAI_KEY = process.env.REACT_APP_OPENAI_KEY;

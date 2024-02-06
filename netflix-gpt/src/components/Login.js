@@ -82,15 +82,12 @@ function Login() {
         <div>
             <Header/>
             <div className="absolute">
-                <img
-                    className="w-screen h-screen object-cover fixed"
-                    src={BG_URL}
-                     alt="backgroung"
-                />
+                <img src={BG_URL}
+                     alt="backgroung"/>
             </div>
 
             <form
-                className='absolute w-full md:w-3/12 p-12 my-36 mx-auto right-0 left-0 rounded text-white bg-black bg-opacity-80'
+                className='absolute w-3/12 p-12 my-36 mx-auto right-0 left-0 rounded text-white bg-black bg-opacity-80'
                 onSubmit={(e) => e.preventDefault()}
             >
                 <h1 className="py-4 font-bold text-3xl">{isSignInForm ? "Sign In" : "Sign Up"}</h1>

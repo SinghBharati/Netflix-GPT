@@ -36,17 +36,8 @@
 -  Made the Browsre page amazing with Tailwind CSS
 -  usePopularMovies, useTopRatedMovies, useUpcomingMovies Custom hook
 - GPT Search Page
-- GPT Search Bar
-- (BONUS) Multi-language Feature in our App)
-- Get Open AI API key
-- Gpt Search API Call
-- Fetched gptMoviesSuggestion from TMDB
-- Created gptSlice added data
-- Reused Movie List component to make movie suggestion container
-- Memoization
-- Added .env
-- Adding .env file to gitignore
-- Made site responsive
+-  GPT Search Bar
+-  (BONUS) Multi-language Feature in our App)
 
 # Features
 - Login/Sign Up
