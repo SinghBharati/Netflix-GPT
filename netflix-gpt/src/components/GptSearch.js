@@ -3,17 +3,24 @@ import GptMovieSuggestions from "./GptMovieSuggestions";
 import {BG_URL} from "../utils/constants";
 function GptSearch() {
     return (
-        <div>
-        {/*    Gpt Search Bar
-                Gpt Movie Suggestion
-        */}
-            <div className="absolute -z-10">
-                <img src={BG_URL}
-                     alt="backgroung"/>
+        <>
+            <div className="fixed -z-10">
+                <img
+                    className="h-screen w-screen object-cover"
+                    src={BG_URL}
+                     alt="backgroung"
+                />
             </div>
-            <GptSearchBar/>
-            <GptMovieSuggestions/>
-        </div>
+            <div className="">
+                {/*    Gpt Search Bar
+                Gpt Movie Suggestion
+                */}
+
+                <GptSearchBar/>
+                <GptMovieSuggestions/>
+            </div>
+        </>
+
     );
 }
 
